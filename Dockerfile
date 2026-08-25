@@ -14,6 +14,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && curl -LsSf https://astral.sh/uv/install.sh | sh
 
+RUN pip install --no-cache-dir uv
+
 WORKDIR /app
 
 COPY pyproject.toml uv.lock ./
