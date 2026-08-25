@@ -27,4 +27,4 @@ RUN uv sync --frozen --no-dev
 
 EXPOSE 8000
 
-CMD ["uv", "run", "python", "-m", "bin.api"]
+CMD ["sh", "-c", "export DATABASE_URL=\"postgresql+asyncpg://${POSTGRES_CONNECTION_STRING#postgres://}\"; uv run alembic upgrade head && exec uv run python -m bin.api"]
