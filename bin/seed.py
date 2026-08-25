@@ -130,8 +130,7 @@ def _build_ad(item: dict, cities: list[str]) -> dict:
     return {
         "title": title,
         "description": (
-            f"{title}. В отличном состоянии, "
-            "есть все документы, возможен торг."
+            f"{title}. В отличном состоянии, есть все документы, возможен торг."
         ),
         "price": max(0, base_price + random.randint(-jitter, jitter)),
         "category": category,
